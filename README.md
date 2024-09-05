@@ -2,7 +2,7 @@
 
 FinQuest is a idea that my team has come out for the CodeOverFlow Hackathon. 
 
-The theme of the hackathon is on increasing financial literarcy.
+The theme of the hackathon is on increasing Financial Literacy.
 
 Thus, FinQuest plans to use quizzes,articles, chatrooms and chatbot to help the youth increase thei rknowledge in this aspect. 
 
