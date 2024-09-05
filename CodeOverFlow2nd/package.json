@@ -9,10 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-
-  
   "dependencies": {
     "dotenv": "^16.4.5",
+    "firebase": "^10.13.1",
     "openai": "^4.57.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

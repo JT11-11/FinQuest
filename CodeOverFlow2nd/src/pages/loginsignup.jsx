@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './loginsignup.css';
 import { auth } from '../firebase/firebase';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
@@ -9,6 +10,7 @@ function LoginSignup() {
     const [isSignUp, setIsSignUp] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
+    const navigate = useNavigate();  // Hook for navigation
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -19,13 +21,25 @@ function LoginSignup() {
             if (isSignUp) {
                 await createUserWithEmailAndPassword(auth, email, password);
                 setSuccessMessage('Account created successfully!');
+                navigate('/');  
             } else {
                 const userCredential = await signInWithEmailAndPassword(auth, email, password);
                 console.log('User signed in:', userCredential.user);
                 setSuccessMessage('Signed in successfully!');
+                navigate('/mainpage');  
             }
         } catch (error) {
-            setErrorMessage(error.message);
+            let message = 'An error occurred. Please try again.';
+            if (error.code === 'auth/invalid-email') {
+                message = 'Invalid email address.';
+            } else if (error.code === 'auth/user-not-found') {
+                message = 'No user found with this email.';
+            } else if (error.code === 'auth/wrong-password') {
+                message = 'Incorrect password.';
+            } else if (error.code === 'auth/email-already-in-use') {
+                message = 'Email is already in use.';
+            }
+            setErrorMessage(message);
         }
     };
 
