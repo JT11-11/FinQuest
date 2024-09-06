@@ -24,13 +24,13 @@ const Rules = () => {
            There is no time limit for the quiz
           </li>
           <li className="bg-white p-4 rounded-lg shadow-md">
-            You score points for each question you answer correctly
+            You score points for each question you answer correctly (Coming Soon) 
           </li>
           <li className="bg-white p-4 rounded-lg shadow-md">
-            Level 1: 2 point
+            Level 1: 2 point (Comming Soon) 
           </li>
           <li className="bg-white p-4 rounded-lg shadow-md">
-            Level 2: 4 point
+            Level 2: 4 point (Comming Soon) 
           </li>
           <li className="bg-white p-4 rounded-lg shadow-md">
             Get 4 or 5 correct to get a certificate 
